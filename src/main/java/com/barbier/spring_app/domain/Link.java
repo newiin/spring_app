@@ -19,11 +19,11 @@ public class Link {
     @NonNull
     private String title;
     @NonNull
+
+    private String url;
 //    public Long getId() {
 //        return id;
 //    }
-    private String url;
-
 
 //
 //    public void setId(Long id) {
