@@ -3,11 +3,13 @@ package com.barbier.spring_app.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -19,40 +21,8 @@ public class Link {
     @NonNull
     private String title;
     @NonNull
-
     private String url;
-//    public Long getId() {
-//        return id;
-//    }
-
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getUrl() {
-//        return url;
-//    }
-//
-//    public void setUrl(String url) {
-//        this.url = url;
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "Link{" +
-//                "id=" + id +
-//                ", title='" + title + '\'' +
-//                '}';
-//    }
-    /* comments */
+    @OneToMany(mappedBy = "link")
+    private List<Comment> comments = new ArrayList<>();
 
 }
